@@ -17,9 +17,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText c_name;
     private EditText value;
     private EditText comment;
-    private ArrayList<Counter> counterList = new ArrayList<Counter>();
+
+    private ArrayList<String> counterList = new ArrayList<String>();
     private ListView counter_list;
-    private ArrayAdapter<Counter> adapter;// = new ArrayAdapter<Counter>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
+    private ArrayAdapter<String> adapter;// = new ArrayAdapter<Counter>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
+
+    private ArrayAdapter<Counter> C_adapter;
+    private ArrayList<Counter> counterListCounters = new ArrayList<Counter>();
+    private ListView c_counter_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 goToSummary();
             }
         });
+
         Button test = (Button) findViewById(R.id.test);
         test.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 addHere();
             }
         });
+
         counter_list = (ListView) findViewById(R.id.cList);
 
 
@@ -49,9 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToSummary() {
 
-        Intent intent2 = new Intent(this, Summary.class);
 
+        Intent intent2 = new Intent(this, Summary.class);
+        intent2.putExtra("intVar", counterList.size());
         startActivity(intent2);
+
 
     }
     private void addHere(){
@@ -65,9 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
         Counter nCounter = new Counter(CNAME, Integer.parseInt(VALUE), COMMENT);
 
-        counterList.add(nCounter);
+        counterList.add(nCounter.getInfo());
+        counterListCounters.add(nCounter);
 
-        adapter = new ArrayAdapter<Counter>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
         counter_list.setAdapter(adapter);
     }
 /*

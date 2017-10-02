@@ -1,11 +1,14 @@
 package com.example.aman.countbook;
 
+import android.content.Intent;
+import android.icu.text.NumberFormat;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 public class Summary extends AppCompatActivity {
 
@@ -24,6 +27,16 @@ public class Summary extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Intent intent5 = getIntent();
+        int intValue = intent5.getIntExtra("intVar", 0);
+        EditText lView = (EditText)findViewById(R.id.summ);
+
+
+
+        lView.setText(String.valueOf(intValue));
+
+        //lView.a();
     }
 
 }

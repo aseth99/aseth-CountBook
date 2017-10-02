@@ -69,6 +69,7 @@ public class Counter {
     public String getInfo() {
         return "Name: " + this.c_name + "\n" +
                 "Date: " + (new SimpleDateFormat("yyyy-MM-dd").format(this.dateOfUpdate)).toString() + "\n" +
+                "initial Count: " + this.c_init_val + "\n" +
                 "Count: " + this.c_value;
     }
 }
