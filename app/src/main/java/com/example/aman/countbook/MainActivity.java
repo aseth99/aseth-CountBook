@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         Counter nCounter = new Counter(CNAME, Integer.parseInt(VALUE), COMMENT);
 
         counterList.add(nCounter.getInfo());
+        //wasnt able to complete and make a custom adapter; would've used to edit the counters
         counterListCounters.add(nCounter);
 
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);

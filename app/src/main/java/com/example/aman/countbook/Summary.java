@@ -42,15 +42,12 @@ public class Summary extends AppCompatActivity {
             }
         });
 
+        //takes the length of the array and displays it
         Intent intent5 = getIntent();
         int intValue = intent5.getIntExtra("intVar", 0);
-        TextView lView = (TextView)findViewById(R.id.summary);
+        TextView summary = (TextView)findViewById(R.id.summary);
 
-
-
-        lView.setText(String.valueOf(intValue));
-
-        //lView.a();
+        summary.setText(String.valueOf(intValue));
     }
 
 }
