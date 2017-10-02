@@ -28,12 +28,26 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <EditText
-        android:id="@+id/summ"
-        android:layout_width="399dp"
-        android:layout_height="602dp"
-        android:ems="10"
-        android:inputType="number"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="235dp"
+        android:layout_height="0dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="@string/title_activity_summary"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:text="Number of Counters:"
         android:textAlignment="center"
         android:textSize="36sp" />
 

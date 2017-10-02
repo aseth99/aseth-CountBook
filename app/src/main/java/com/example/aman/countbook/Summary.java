@@ -22,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Summary extends AppCompatActivity {
 
@@ -43,7 +44,7 @@ public class Summary extends AppCompatActivity {
 
         Intent intent5 = getIntent();
         int intValue = intent5.getIntExtra("intVar", 0);
-        EditText lView = (EditText)findViewById(R.id.summ);
+        TextView lView = (TextView)findViewById(R.id.summary);
 
 
 
