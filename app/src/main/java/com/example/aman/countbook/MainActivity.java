@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> counterList = new ArrayList<String>();
     private ListView counter_list;
     private ArrayAdapter<String> adapter;
-    
+
+    //didnt end up using these, ran out of time :(
     private ArrayAdapter<Counter> C_adapter;
     private ArrayList<Counter> counterListCounters = new ArrayList<Counter>();
     private ListView c_counter_list;

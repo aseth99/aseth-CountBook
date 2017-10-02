@@ -53,7 +53,7 @@ public class Counter {
         this.c_init_val = c_value;
     }
 
-
+    //didnt end up using these :(
     public String get_C_name(){
         return this.c_name;
     }
