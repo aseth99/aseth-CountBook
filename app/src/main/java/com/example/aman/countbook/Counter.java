@@ -1,5 +1,7 @@
 package com.example.aman.countbook;
 
+import android.os.Parcelable;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -9,17 +11,23 @@ import java.util.Date;
 
 public class Counter {
     private String c_name;
-    private String dateOfUpdate;
+    private Date dateOfUpdate;
     private int c_value;
     private int c_init_val;
     private String comment;
 
-    public Counter(String c_name, String dateOfUpdate, int c_value, int c_init_val, String comment){
+    public Counter(String c_name, int c_value, String comment){
         this.c_name = c_name;
-        this.dateOfUpdate = dateOfUpdate;
+        this.dateOfUpdate = new Date();
         this.c_value = c_value;
-        this.c_init_val = c_init_val;
+        this.c_init_val = c_value;
         this.comment = comment;
+    }
+    public Counter(String c_name, int c_value){
+        this.c_name = c_name;
+        this.dateOfUpdate = new Date();
+        this.c_value = c_value;
+        this.c_init_val = c_value;
     }
 
 
@@ -27,10 +35,13 @@ public class Counter {
         return this.c_name;
     }
 
-    public String getDate(){
+    public Date getDate(){
         return this.dateOfUpdate;
     }
 
+    public void updateDate(Date update){
+        this.dateOfUpdate = update;
+    }
     public int getC_value(){
         return this.c_value;
     }

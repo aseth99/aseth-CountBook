@@ -20,10 +20,6 @@
             android:name=".Summary"
             android:label="@string/title_activity_summary"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".NewCounter"
-            android:label="@string/title_activity_new_counter"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

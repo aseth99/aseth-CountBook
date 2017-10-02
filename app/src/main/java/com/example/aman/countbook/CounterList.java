@@ -9,7 +9,11 @@ import java.util.Collection;
 
 public class CounterList {
 
-    private ArrayList<Counter> counterList;
+    public ArrayList<Counter> getCounterList() {
+        return counterList;
+    }
+
+    ArrayList<Counter> counterList;
 
     public CounterList(){
         counterList = new ArrayList<Counter>();
