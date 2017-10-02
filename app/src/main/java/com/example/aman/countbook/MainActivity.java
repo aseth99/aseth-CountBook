@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void goToAdd() {
 
-        Intent intent1 = new Intent(this, AddCounter.class);
+        Intent intent1 = new Intent(this, NewCounter.class);
 
         startActivity(intent1);
 
