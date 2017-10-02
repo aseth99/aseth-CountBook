@@ -1,11 +1,22 @@
+/*
+ * MainActivity.java
+ *
+ * Version: 1.0
+ *
+ * Date: 2017-10-02
+ *
+ * Author: Aman Seth
+ *
+ * Copyright (c) 2017. CMPUT 301. University of Alberta - All Rights Reserved. You may use, distribute, or modify
+ *  this code under terms and conditions of the Code of Student Behavior at the University of Alberta. You may find a
+ *  copy of the license in the project. Otherwise please contact aseth@ualberta.ca
+ */
 package com.example.aman.countbook;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +24,15 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+
+/**
+ * Represents main page of app
+ *
+ * @author Aman Seth
+ * @version 1.0
+ * @since 1.0
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     private EditText c_name;
     private EditText value;
@@ -20,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> counterList = new ArrayList<String>();
     private ListView counter_list;
-    private ArrayAdapter<String> adapter;// = new ArrayAdapter<Counter>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
-
+    private ArrayAdapter<String> adapter;
+    
     private ArrayAdapter<Counter> C_adapter;
     private ArrayList<Counter> counterListCounters = new ArrayList<Counter>();
     private ListView c_counter_list;
@@ -49,11 +69,16 @@ public class MainActivity extends AppCompatActivity {
 
         counter_list = (ListView) findViewById(R.id.cList);
 
-
-
-        //Counter new_counter = (Counter) intent4.getParcelableExtra("counter");
     }
-
+    /**
+     * Changes activity to Summary Page
+     *
+     * @author Aman Seth
+     * @version 1.0
+     *
+     * @since 1.0
+     *
+     */
     private void goToSummary() {
 
 
@@ -63,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * Adds counters to list, uses array adapter to display information
+     *
+     * @author Aman Seth
+     * @version 1.0
+     *
+     * @since 1.0
+     *
+     */
     private void addHere(){
         c_name = (EditText) findViewById(R.id.cntName);
         value = (EditText) findViewById(R.id.num);
@@ -80,29 +115,5 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, counterList);
         counter_list.setAdapter(adapter);
     }
-/*
-    public class counterAdapter extends ArrayAdapter<Counter> {
-        public counterAdapter() {
-            super(MainActivity.this, 0, counterList);
-        }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // Get the data item for this position
-            Counter cnter = counterList.get(position);
-            // Check if an existing view is being reused, otherwise inflate the view
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
-            }
-            // Lookup view for data population
-            TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
-            TextView tvHome = (TextView) convertView.findViewById(R.id.tvHome);
-            // Populate the data into the template view using the data object
-            tvName.setText(user.name);
-            tvHome.setText(user.hometown);
-            // Return the completed view to render on screen
-            return convertView;
-        }
-    }
-*/
 }
